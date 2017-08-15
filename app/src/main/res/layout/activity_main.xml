@@ -14,29 +14,44 @@
         android:paddingTop="16dp"
         android:text="Quantity"
         android:textAllCaps="true" />
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
 
+    >
     <Button
+        android:id="@+id/button2"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginLeft="16dp"
-        android:text="+"
-        android:onClick="increment"/>
-
+        android:onClick="decrement"
+        android:text="-" />
     <TextView
         android:id="@+id/quantity_text_view"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:paddingLeft="16dp"
-        android:text="0"
+        android:text=" - "
         android:textColor="#000000"
         android:textSize="16sp" />
-
     <Button
+        android:id="@+id/button"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginLeft="16dp"
-        android:text="-"
-        android:onClick="decrement"/>
+        android:onClick="increment"
+        android:text="+" />
+</LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:orientation="horizontal"></LinearLayout>
+
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -52,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="16dp"
-        android:text="$ -"
+        android:text="$ - "
         android:textColor="#000000"
         android:textSize="16sp" />
 
