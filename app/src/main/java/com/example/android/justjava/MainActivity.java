@@ -17,10 +17,13 @@ import java.text.NumberFormat;
 /**
  * This app displays an order form to order coffee.
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+{
 
+    int quantity = 0;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
@@ -28,27 +31,29 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method is called when the order button is clicked.
      */
-    public void submitOrder(View view) {
-        int quantity = 5;
-        display(quantity);
+    public void submitOrder(View view)
+    {
         displayPrice(quantity * 5);
     }
 
     // This method is called when the increment button is clicked.
-    public void increment(View view){
-        int quantity = 3;
+    public void increment(View view)
+    {
+        quantity = quantity + 1;
         display(quantity);
     }
 
-    public void decrement(View view){
-        int quantity = 1;
+    public void decrement(View view)
+    {
+        quantity = quantity - 1;
         display(quantity);
     }
 
     /**
      * This method displays the given quantity value on the screen.
      */
-    private void display(int number) {
+    private void display(int number)
+    {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + number);
     }
@@ -56,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method displays the given price on the screen.
      */
-    private void displayPrice(int number) {
+    private void displayPrice(int number)
+    {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
