@@ -9,12 +9,16 @@ package com.example.android.justjava;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
 
+import static android.R.id.checkbox;
 import static android.R.id.message;
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.L;
 
 /**
  * This app displays an order form to order coffee.
@@ -38,6 +42,9 @@ public class MainActivity extends AppCompatActivity
     {
         int price = calculatePrice();
         displayMessage(orderSummary(price));
+
+        Log.i("MainActivity", "Has topping: " + checkTopping());
+
     }
 
     /**
@@ -53,8 +60,30 @@ public class MainActivity extends AppCompatActivity
 
     private String orderSummary(int priceOfOrder)
     {
-        String ans = "Name: Joachim Harms\nQuantity: " + quantity + "\nTotal: $" + calculatePrice() + " \nThank you!";
+        String ans = "Name: Joachim Harms";
+        ans += "\nAdd whipped cream? " + checkTopping();
+        ans += "\nAdd chocolate?" + checkChocolate();
+        ans += "\nQuantity: " + quantity;
+        ans += "\nTotal: $" + calculatePrice();
+        ans += "\nThank you!";
         return ans;
+    }
+
+    public boolean checkTopping()
+    {
+        boolean hasTopping = true;
+        CheckBox checkBox = (CheckBox) findViewById(R.id.checkbox_view);
+        hasTopping = checkBox.isChecked();
+        // Log.i("MainActivity", "Value: " + hasTopping);
+        return hasTopping;
+    }
+
+    public boolean checkChocolate()
+    {
+        boolean hasChocolate = true;
+        CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_view);
+        hasChocolate = chocolateCheckBox.isChecked();
+        return hasChocolate;
     }
 
     // This method is called when the increment button is clicked.
