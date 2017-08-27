@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity
 {
 
     int quantity = 0;
+    String name = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -40,11 +42,10 @@ public class MainActivity extends AppCompatActivity
      */
     public void submitOrder(View view)
     {
+        EditText editName = (EditText) findViewById(R.id.edit_name_view);
+        name = editName.getText().toString();
         int price = calculatePrice();
-        displayMessage(orderSummary(price));
-
-        Log.i("MainActivity", "Has topping: " + checkTopping());
-
+        displayMessage(orderSummary(price, name));
     }
 
     /**
@@ -58,9 +59,9 @@ public class MainActivity extends AppCompatActivity
         return price;
     }
 
-    private String orderSummary(int priceOfOrder)
+    private String orderSummary(int priceOfOrder, String name)
     {
-        String ans = "Name: Joachim Harms";
+        String ans = "Name: " + name;
         ans += "\nAdd whipped cream? " + checkTopping();
         ans += "\nAdd chocolate? " + checkChocolate();
         ans += "\nQuantity: " + quantity;
