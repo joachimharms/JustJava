@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity
     {
         String ans = "Name: Joachim Harms";
         ans += "\nAdd whipped cream? " + checkTopping();
-        ans += "\nAdd chocolate?" + checkChocolate();
+        ans += "\nAdd chocolate? " + checkChocolate();
         ans += "\nQuantity: " + quantity;
         ans += "\nTotal: $" + calculatePrice();
         ans += "\nThank you!";
