@@ -33,7 +33,7 @@ import static android.icu.lang.UCharacter.GraphemeClusterBreak.L;
 public class MainActivity extends AppCompatActivity
 {
 
-    int quantity = 99;
+    int quantity = 2;
     String name = "";
 
     @Override
@@ -48,17 +48,27 @@ public class MainActivity extends AppCompatActivity
      */
     public void submitOrder(View view)
     {
-//        EditText editName = (EditText) findViewById(R.id.edit_name_view);
-//        name = editName.getText().toString();
-//        int price = calculatePrice();
-//        displayMessage(orderSummary(price, name));
+        EditText editName = (EditText) findViewById(R.id.edit_name_view);
+        name = editName.getText().toString();
+        int price = calculatePrice();
 
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse("geo:47.6, -122.3"));
-        if (intent.resolveActivity(getPackageManager()) != null) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Just Java order for " + name);
+        intent.putExtra(Intent.EXTRA_TEXT, orderSummary(price, name));
+        if (intent.resolveActivity(getPackageManager()) != null)
+        {
             startActivity(intent);
+        }
 
-    }
+
+//        Intent intent = new Intent(Intent.ACTION_VIEW);
+//        intent.setData(Uri.parse("geo:47.6, -122.3"));
+//        if (intent.resolveActivity(getPackageManager()) != null)
+//        {
+//            startActivity(intent);
+//
+//        }
     }
 
     /**
@@ -147,20 +157,20 @@ public class MainActivity extends AppCompatActivity
     /**
      * This method displays the given price on the screen.
      */
-    private void displayPrice(int number)
-    {
-        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
-        orderSummaryTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-    }
+//    private void displayPrice(int number)
+//    {
+//        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+//        orderSummaryTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+//    }
 
 
     /**
      * This method displays the given text on the screen.
      */
-    private void displayMessage(String message)
-    {
-        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
-        orderSummaryTextView.setText(message);
-    }
+//    private void displayMessage(String message)
+//    {
+//        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+//        orderSummaryTextView.setText(message);
+//    }
 
 }

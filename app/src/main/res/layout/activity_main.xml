@@ -15,9 +15,9 @@
             android:id="@+id/edit_name_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Name"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
+            android:hint="Name"
             android:inputType="textCapWords"
             android:textAllCaps="false"/>
 
@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
-                android:text=" 99 "
+                android:text=" 2 "
                 android:textColor="#000000"
                 android:textSize="16sp"/>
 
@@ -92,23 +92,23 @@
                 android:text="+"/>
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="16dp"
-            android:paddingLeft="16dp"
-            android:paddingTop="16dp"
-            android:text="Order summary"
-            android:textAllCaps="true"/>
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:paddingBottom="16dp"-->
+        <!--android:paddingLeft="16dp"-->
+        <!--android:paddingTop="16dp"-->
+        <!--android:text="Order summary"-->
+        <!--android:textAllCaps="true"/>-->
 
-        <TextView
-            android:id="@+id/order_summary_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="16dp"
-            android:text=" 0,00 €"
-            android:textColor="#000000"
-            android:textSize="16sp"/>
+        <!--<TextView-->
+        <!--android:id="@+id/order_summary_text_view"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:paddingLeft="16dp"-->
+        <!--android:text=" 0,00 €"-->
+        <!--android:textColor="#000000"-->
+        <!--android:textSize="16sp"/>-->
 
         <Button
             android:layout_width="wrap_content"
