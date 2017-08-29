@@ -27,7 +27,7 @@
             android:paddingBottom="16dp"
             android:paddingLeft="16dp"
             android:paddingTop="16dp"
-            android:text="Toppings"
+            android:text="@string/toppings"
             android:textAllCaps="true"/>
 
         <CheckBox
