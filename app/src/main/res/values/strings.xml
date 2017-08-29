@@ -1,9 +1,27 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">JustJava</string>
 
     <!--Header text for the list of toppings [CHAR LIMIT=20]-->
     <string name="toppings">Toppings</string>
     <!--Thank you message for the order summary. [CHAR LIMIT=NONE]-->
     <string name="thank_you">Thank you!</string>
+    <!--for the total amount-->
+    <string name="total_amount">Total: $</string>
+    <!--Name for the name field in  edit_name_view [CHAR LIMIT=20]-->
+    <string name="name">Name</string>
 
+    <!--Whipped Cream text for the checkbox [CHAR LIMIT=20]-->
+    <string name="whipped_cream">Whipped Cream</string>
+    <!--Chocolate text for the checkbox [CHAR LIMIT=20}-->
+    <string name="chocolate">Chocolate</string>
+    <!--Quantity message [CHAR LIMIT=20]-->
+    <string name="quantity">Quantity: </string>
+    <!--Order text for the order button [CHAR LIMIT=20]-->
+    <string name="order">Order</string>
+        <!--Message in Java code order summary if the user wants whipped cream as topping-->
+    <string name="add_whipped_cream">Add whipped cream? </string>
+    <!--Message in Java code order summary if the user wants chocolate as topping-->
+    <string name="add_chocolate">Add chocolate? </string>
+
+    <string name="order_summary_name">Name: <xliff:g id="name" example="Amy">%s</xliff:g></string>
 </resources>

@@ -93,12 +93,12 @@ public class MainActivity extends AppCompatActivity
 
     private String orderSummary(int priceOfOrder, String name)
     {
-        String ans = "Name: " + name;
-        ans += "\nAdd whipped cream? " + checkTopping();
-        ans += "\nAdd chocolate? " + checkChocolate();
-        ans += "\nQuantity: " + quantity;
-        ans += "\nTotal: $" + calculatePrice();
-        ans += "\nThank you!";
+        String ans = getString(R.string.order_summary_name, name);
+        ans += "\n" + getString(R.string.add_whipped_cream) + " " + checkTopping();
+        ans += "\n" + getString(R.string.add_chocolate) + " " + checkChocolate();
+        ans += "\n" + getString(R.string.quantity) + " " + quantity;
+        ans += "\n" + getString(R.string.total_amount) + calculatePrice();
+        ans += "\n" + getString(R.string.thank_you);
         return ans;
     }
 
